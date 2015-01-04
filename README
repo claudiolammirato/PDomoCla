@@ -1,0 +1,12 @@
+README FILE
+
+Domotic Web Flask Application
+
+In development
+
+-HEATING/COOLING
+-GARDEN
+-ALARM
+-LIGHTS
+
+This program will use Arduino Yun as interface
