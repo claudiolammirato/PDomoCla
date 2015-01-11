@@ -1,0 +1,11 @@
+footer{
+	padding: 2em 0;
+	margin: 3em 0;
+	border-top: 1px solid #ddd;
+	color: #999;
+	text-align: center;
+}
+
+body{
+	background-image: url('sfondo.jpg');
+}
