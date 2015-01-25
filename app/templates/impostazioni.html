@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Impostazioni{% endblock %}
+
+{% block page_content %}
+    <h1>Impostazioni</h1>
+    <div class="row">
+        <div class="col-md-3">
+            {{ wtf.quick_form(form1) }}
+        </div>
+    </div>
+{% endblock %}

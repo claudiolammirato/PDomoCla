@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block title %}Login Example{% endblock %}
+
+{% block page_content %}
+<link rel="stylesheet" type="text/css" href="static/index/index.css">
+	<div class="row">
+		<div class="col-md-2 col-xs-2">
+			<a href="#">Impostazioni</a>
+		</div>
+			<div class="col-md-8 col-xs-8">
+				<div class="col-xs-3 thumbnail">
+					<img src="static/index/temperatura-casa.jpg" class="img-responsive">
+					<a href="{{ url_for('main.temperature') }}" class="btn btn-info center-block">Temperatura</a>
+			</div>
+			<div class="col-xs-3 thumbnail">
+				<img src="static/index/controllo-luci.jpg" class="img-responsive">
+				<div class="row-fluid pagination-centered">
+				<a href="#" class="btn btn-info center-block">Luci</a>
+				</div>
+			</div>
+			<div class="col-xs-3 thumbnail">
+				<img src="static/index/giardino.jpg" class="img-responsive">
+				<a href="#" class="btn btn-info center-block">Giardino</a>
+			</div>
+			<div class="col-xs-3 thumbnail">
+				<img src="static/index/allarme-casa.jpg" class="img-responsive">
+				<a href="#" class="btn btn-info center-block">Allarme</a>
+			</div>
+		</div>
+		<div class="col-md-2 col-xs-2">Colonna destra</div>
+	</div>
+	<p>You are {% if not current_user.is_authenticated() %}not {% endif %}logged in.</p>
+	
+	<footer><small>Claudio Lammirato Copyright</small></footer>
+    
+{% endblock %}
