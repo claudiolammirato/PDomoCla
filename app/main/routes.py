@@ -38,4 +38,8 @@ def temperature():
 @login_required
 def impostazioni():
     form1 = ChangeUser()
+    if form1.validate_on_submit():
+        User.delete()
+        User.register(form1.username.data, form1.password.data)
+        return redirect(url_for('main.index'))
     return render_template('impostazioni.html', form1=form1)

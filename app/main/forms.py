@@ -3,6 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import Required, Length
 
 
+
 class LoginForm(Form):
     username = StringField('Username', validators=[Required(), Length(1, 16)])
     password = PasswordField('Password', validators=[Required()])
@@ -12,5 +13,4 @@ class LoginForm(Form):
 class ChangeUser(Form):
 	username = StringField('Username', validators=[Required(), Length(1,16)])
 	password = PasswordField('Password', validators=[Required()])
-	passwordconfirm = PasswordField('Password Confirmation', validators=[Required()])
 	submit = SubmitField('Save')

@@ -1,6 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db, lm
 from flask.ext.login import UserMixin
+from flask.ext.login import current_user
 
 
 class User(UserMixin, db.Model):
@@ -20,6 +21,12 @@ class User(UserMixin, db.Model):
         user = User(username=username)
         user.set_password(password)
         db.session.add(user)
+        db.session.commit()
+
+    @staticmethod
+    def delete():
+        me = User.query.filter_by(username=current_user.username).first()
+        db.session.delete(me)
         db.session.commit()
 
     def __repr__(self):

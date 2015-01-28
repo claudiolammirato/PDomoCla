@@ -6,6 +6,6 @@ if __name__ == '__main__':
     app = create_app('development')
     with app.app_context():
         db.create_all()
-        if User.query.filter_by(username='claudio').first() is None:
-            User.register('claudio', 'lammirato')
+        #if User.query.filter_by(username='claudio').first() is None:
+        #    User.register('claudio', 'lammirato')
     app.run()
