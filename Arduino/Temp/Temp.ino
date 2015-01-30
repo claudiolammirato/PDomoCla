@@ -25,8 +25,8 @@ void loop() {
    float n1 = DHT.temperature;
   
    Process p;
-   p.runShellCommand("sqlite3 -line /mnt/sdb1/test.db 'CREATE TABLE IF NOT EXISTS Temp ( a DATETIME DEFAULT (CURRENT_DATE), b DATETIME DEFAULT (CURRENT_TIME), c INT, d INT);'");
-   String string1 = "sqlite3 -line /mnt/sdb1/test.db ";
+   p.runShellCommand("sqlite3 -line /mnt/sda1/test.db 'CREATE TABLE IF NOT EXISTS Temp ( a DATETIME DEFAULT (CURRENT_DATE), b DATETIME DEFAULT (CURRENT_TIME), c INT, d INT);'");
+   String string1 = "sqlite3 -line /mnt/sda1/test.db ";
    String string2 = "'INSERT INTO Temp ( c, d) VALUES (  ";
    //String string3 = "";
    //String string4 = "CURRENT_TIME";
@@ -39,7 +39,7 @@ void loop() {
 
    p.runShellCommand(string1+string2+string7+string8+string9+string10);
    
-   delay(60000);
+   delay(600000);
   
 }
 

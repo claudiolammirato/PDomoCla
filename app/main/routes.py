@@ -3,6 +3,8 @@ from flask.ext.login import login_required, login_user, logout_user
 from ..models import User
 from . import main
 from .forms import LoginForm, ChangeUser
+from ..ftparduino import ftparduino
+from ..graph import graph
 
 
 @main.route('/login', methods=['GET', 'POST'])
@@ -32,6 +34,8 @@ def index():
 @main.route('/temperature')
 @login_required
 def temperature():
+    ftparduino()
+    graph()
     return render_template('temperature.html')
 
 @main.route('/impostazioni', methods=['GET', 'POST'])
