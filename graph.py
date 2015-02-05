@@ -47,5 +47,5 @@ def graph():
     ax.set_ylabel(r"Temperature ($^\circ$C)")
     ax2.set_ylim(35, 55)
     ax.set_ylim(10,35)
-    plt.savefig('app/static/temperature/temperature.png')
+    plt.savefig('static/temperature/temperature.png')
     #plt.show()

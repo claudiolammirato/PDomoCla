@@ -6,20 +6,20 @@
 {% block navbar %}
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
                 PdomoCla
             </a>
             <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('main.index') }}">Home</a></li>
-                <li><a href="{{ url_for('main.impostazioni') }}">Impostazioni</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('impostazioni') }}">Impostazioni</a></li>
 
             </ul>>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     {% if current_user.is_authenticated() %}
-                        <a href="{{ url_for('main.logout') }}">Logout</a>
+                        <a href="{{ url_for('logout') }}">Logout</a>
                     {% else %}
-                        <a href="{{ url_for('main.login') }}">Login</a>
+                        <a href="{{ url_for('login') }}">Login</a>
                     {% endif %}
                 </li>
             </ul>
