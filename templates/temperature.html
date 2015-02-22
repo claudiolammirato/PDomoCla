@@ -1,14 +1,21 @@
 {% extends "base.html" %}
-
-{% block title %}PdomoCla{% endblock %}
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+</head>
+{% block title %}PdomoCla - Temperatura{% endblock %}
 
 {% block page_content %}
+
+
 <script type="text/javascript" src="static/js/dygraph-combined-dev.js"></script>
 <h1>PDomoCla - Temperature</h1>
 
 <div id="graphdiv2" style="width:500px; height:300px;"></div>
 
 <script type="text/javascript">
+
   g2 = new Dygraph(
     document.getElementById("graphdiv2"),
     "static/output1.csv", // path to CSV file

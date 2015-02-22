@@ -18,6 +18,7 @@ bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 lm = LoginManager(app)
 lm.login_view = 'login'
+app.config["CACHE_TYPE"] = "null"
 
 
 
