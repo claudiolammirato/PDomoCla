@@ -20,7 +20,7 @@ def graph():
 
         for row in rows:
             y.append(row[3])
-            x.append(datetime.strptime(row[1], '%H:%M:%S')) #%H:%M:%S
+            x.append(datetime.strptime(row[1], '%H:%M:%S') ) #%H:%M:%S
             z.append(row[2])
 
         x2h=[]
@@ -47,5 +47,6 @@ def graph():
     ax.set_ylabel(r"Temperature ($^\circ$C)")
     ax2.set_ylim(35, 55)
     ax.set_ylim(10,35)
-    plt.savefig('static/temperature/temperature.png')
+    return fig
+    #plt.savefig('static/temperature/temperature.png')
     #plt.show()

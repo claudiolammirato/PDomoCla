@@ -3,10 +3,19 @@
 {% block title %}PdomoCla{% endblock %}
 
 {% block page_content %}
+<script type="text/javascript" src="static/js/dygraph-combined-dev.js"></script>
+<h1>PDomoCla - Temperature</h1>
 
-	<meta http-equiv="refresh" content="15">
-    <h1>PDomoCla - Temperature</h1>
-    <img src="static/temperature/temperature.png" class="img-responsive">
+<div id="graphdiv2" style="width:500px; height:300px;"></div>
+
+<script type="text/javascript">
+  g2 = new Dygraph(
+    document.getElementById("graphdiv2"),
+    "static/output1.csv", // path to CSV file
+    {}          // options
+  );
+</script>
+    
     <p>This page can only be viewed by logged in users.</p>
     <p>You are logged in as <b>{{ current_user.username }}</b>.</p>
 

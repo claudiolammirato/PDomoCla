@@ -1,5 +1,5 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, send_file
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
@@ -7,7 +7,7 @@ from wtforms.validators import Required, Length
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager, UserMixin, login_user, logout_user, login_required
 from ftparduino import ftparduino
-from graph import graph
+from sqlcsv import sqlcsv
 
 
 
@@ -89,6 +89,7 @@ def logout():
 
 @app.route('/')
 def index():
+    
     return render_template('index.html')
 
 
@@ -96,8 +97,9 @@ def index():
 @login_required
 def temperature():
     ftparduino()
-    graph()
+    sqlcsv()
     return render_template('temperature.html')
+
 
 @app.route('/impostazioni', methods=['GET', 'POST'])
 @login_required
