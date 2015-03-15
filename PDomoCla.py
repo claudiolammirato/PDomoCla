@@ -10,7 +10,6 @@ from ftparduino import ftparduino
 from sqlcsv import sqlcsv
 
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite3'
@@ -111,6 +110,7 @@ def impostazioni():
         User.register(form1.username.data, form1.password.data)
         return redirect(url_for('index'))
     return render_template('impostazioni.html', form1=form1)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
